@@ -29,7 +29,6 @@ import 'screens/category/category_list_screen.dart';
 import 'screens/chat/chat_screen.dart';
 
 import 'package:uni_links/uni_links.dart' as uni_links;
-import 'package:url_launcher/url_launcher.dart';
 
 void main() async {
   // Initialize the deep linking configuration

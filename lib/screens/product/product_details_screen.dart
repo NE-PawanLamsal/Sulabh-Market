@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:sulabh_market_app/constants/colors.dart';
 import 'package:sulabh_market_app/provider/product_provider.dart';
-import 'package:sulabh_market_app/screens/chat/chat_screen.dart';
 import 'package:sulabh_market_app/screens/chat/user_chat_screen.dart';
 import 'package:sulabh_market_app/services/auth.dart';
 import 'package:sulabh_market_app/services/user.dart';
@@ -11,13 +10,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:like_button/like_button.dart';
 import 'package:map_launcher/map_launcher.dart' as launcher;
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:sulabh_market_app/global_var.dart';
-import 'package:share_plus/share_plus.dart';
 
 class ProductDetail extends StatefulWidget {
   static const screenId = 'product_details_screen';
@@ -28,7 +25,6 @@ class ProductDetail extends StatefulWidget {
 }
 
 class _ProductDetailState extends State<ProductDetail> {
-  late GoogleMapController _mapController;
   Auth authService = Auth();
   UserService firebaseUser = UserService();
   bool _loading = true;
@@ -624,11 +620,7 @@ class _ProductDetailState extends State<ProductDetail> {
                                               ),
                                               mapType: MapType.normal,
                                               onMapCreated: (GoogleMapController
-                                                  controller) {
-                                                setState(() {
-                                                  _mapController = controller;
-                                                });
-                                              },
+                                                  controller) {},
                                             ),
                                           ),
                                           Center(

@@ -50,10 +50,11 @@ class UserService {
         .doc(chatroomId)
         .collection('chats')
         .add(message)
-        .catchError((error) {
+        .catchError((Object error) {
       if (kDebugMode) {
         print(error.toString());
       }
+      throw error;
     });
     authService.messages.doc(chatroomId).update({
       'lastChat': message['message'],

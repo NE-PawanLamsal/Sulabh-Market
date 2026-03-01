@@ -1,4 +1,3 @@
-import 'package:sulabh_market_app/components/custom_icon_button.dart';
 import 'package:sulabh_market_app/components/login_buttons.dart';
 import 'package:sulabh_market_app/constants/colors.dart';
 import 'package:sulabh_market_app/constants/validators.dart';
@@ -7,11 +6,8 @@ import 'package:sulabh_market_app/screens/auth/register_screen.dart';
 import 'package:sulabh_market_app/screens/auth/reset_password_screen.dart';
 import 'package:sulabh_market_app/services/auth_login.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import '../screens/auth/phone_auth_screen.dart';
 
 class LogInForm extends StatefulWidget {
   const LogInForm({

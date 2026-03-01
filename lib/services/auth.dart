@@ -10,10 +10,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-
 class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final storage = const FlutterSecureStorage();
@@ -53,7 +49,11 @@ class Auth {
       if (kDebugMode) {
         print('user added successfully');
       }
-    }).catchError((error) => print("Failed to add user: $error"));
+    }).catchError((error) {
+      if (kDebugMode) {
+        print("Failed to add user: $error");
+      }
+    });
   }
 
   Future<void> verifyPhoneNumber(BuildContext context, String number) async {
@@ -122,11 +122,7 @@ class Auth {
           await _firebaseAuth.signInWithCredential(credential);
 
       Navigator.pop(context);
-      if (userCredential != null) {
-        getAdminCredentialPhoneNumber(context, userCredential.user);
-      } else {
-        wrongDetailsAlertBox('Login Failed, Please retry again.', context);
-      }
+      getAdminCredentialPhoneNumber(context, userCredential.user);
     } catch (e) {
       Navigator.pop(context);
       wrongDetailsAlertBox(
@@ -246,14 +242,7 @@ class Auth {
         print(credential);
       }
       Navigator.pop(context);
-      if (credential.user!.uid != null) {
-        Navigator.pushReplacementNamed(context, LocationScreen.screenId);
-      } else {
-        customSnackBar(
-          context: context,
-          content: 'Please check with your credentials',
-        );
-      }
+      Navigator.pushReplacementNamed(context, LocationScreen.screenId);
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
       if (e.code == 'user-not-found') {

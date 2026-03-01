@@ -119,13 +119,11 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
                                     isUploading = true;
                                     uploadFile(context, _image!.path)
                                         .then((url) {
-                                      if (url != null) {
-                                        _provider.setImageList(url);
-                                        setState(() {
-                                          isUploading = false;
-                                          _image = null;
-                                        });
-                                      }
+                                      _provider.setImageList(url);
+                                      setState(() {
+                                        isUploading = false;
+                                        _image = null;
+                                      });
                                     });
                                   });
                                 },

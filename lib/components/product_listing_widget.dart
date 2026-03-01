@@ -1,14 +1,10 @@
 import 'package:sulabh_market_app/constants/colors.dart';
 import 'package:sulabh_market_app/provider/category_provider.dart';
-import 'package:sulabh_market_app/provider/product_provider.dart';
 import 'package:sulabh_market_app/screens/product/product_card.dart';
-import 'package:sulabh_market_app/screens/product/product_details_screen.dart';
 import 'package:sulabh_market_app/services/auth.dart';
 import 'package:sulabh_market_app/services/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:sulabh_market_app/global_var2.dart';
@@ -28,7 +24,6 @@ class _ProductListingState extends State<ProductListing> {
 
   @override
   Widget build(BuildContext context) {
-    var productProvider = Provider.of<ProductProvider>(context);
     var categoryProvider = Provider.of<CategoryProvider>(context);
     final numberFormat = NumberFormat('##,##,##0');
 
