@@ -4,13 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:email_validator/email_validator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
 import '../services/auth.dart';
 import '../constants/colors.dart';
 import '../constants/validators.dart';
 import '../constants/widgets.dart';
-import '../screens/auth/phone_auth_screen.dart';
 import 'package:sulabh_market_app/components/signup_buttons.dart';
 
 class RegisterForm extends StatefulWidget {
@@ -103,6 +100,7 @@ class _RegisterFormState extends State<RegisterForm> {
   Future<void> _handleRegistration() async {
     if (_formKey.currentState!.validate()) {
       final imageUrl = await _uploadImageToFirebase();
+      if (!mounted) return;
 
       if (imageUrl != null) {
         await authService.getAdminCredentialEmailAndPassword(

@@ -139,7 +139,7 @@ openBottomSheet(
                       style: ElevatedButton.styleFrom(
                         shape: const CircleBorder(),
                         padding: const EdgeInsets.all(10),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: Icon(Icons.close, color: blackColor),
                     ),

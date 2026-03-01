@@ -1,11 +1,9 @@
 import 'package:sulabh_market_app/constants/colors.dart';
 import 'package:sulabh_market_app/constants/widgets.dart';
-import 'package:sulabh_market_app/models/popup_menu_model.dart';
 import 'package:sulabh_market_app/screens/chat/user_chat_screen.dart';
 import 'package:sulabh_market_app/services/auth.dart';
 import 'package:sulabh_market_app/services/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:custom_pop_up_menu/custom_pop_up_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 

@@ -1,12 +1,8 @@
 import 'package:sulabh_market_app/constants/widgets.dart';
-import 'package:sulabh_market_app/models/popup_menu_model.dart';
 import 'package:sulabh_market_app/screens/chat/chat_stream.dart';
 import 'package:sulabh_market_app/constants/colors.dart';
-import 'package:sulabh_market_app/provider/product_provider.dart';
 import 'package:sulabh_market_app/services/user.dart';
-import 'package:custom_pop_up_menu/custom_pop_up_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:firebase_messaging/firebase_messaging.dart'; // Import Firebase Messaging
 
 class UserChatScreen extends StatefulWidget {
@@ -199,7 +195,6 @@ class _UserChatScreenState extends State<UserChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var productProvider = Provider.of<ProductProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: whiteColor,

@@ -71,6 +71,7 @@ Future<String> uploadFile(BuildContext context, String filePath) async {
         await FirebaseStorage.instance.ref(imageName).getDownloadURL();
     print(downloadUrl);
   } on FirebaseException catch (e) {
+    // ignore: use_build_context_synchronously
     customSnackBar(context: context, content: e.code);
   }
   return downloadUrl;

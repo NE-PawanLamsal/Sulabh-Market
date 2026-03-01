@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:sulabh_market_app/constants/colors.dart';
 import 'package:sulabh_market_app/screens/category/category_list_screen.dart';
 import 'package:sulabh_market_app/screens/chat/chat_card.dart';

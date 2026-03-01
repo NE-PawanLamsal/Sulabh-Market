@@ -114,11 +114,7 @@ class Auth {
           await _firebaseAuth.signInWithCredential(credential);
 
       Navigator.pop(context);
-      if (userCredential != null) {
-        getAdminCredentialPhoneNumber(context, userCredential.user);
-      } else {
-        wrongDetailsAlertBox('Login Failed, Please retry again.', context);
-      }
+      getAdminCredentialPhoneNumber(context, userCredential.user);
     } catch (e) {
       Navigator.pop(context);
       wrongDetailsAlertBox(
@@ -227,12 +223,7 @@ class Auth {
         print(credential);
       }
       Navigator.pop(context);
-      if (credential.user!.uid != null) {
-        Navigator.pushReplacementNamed(context, LocationScreen.screenId);
-      } else {
-        customSnackBar(
-            context: context, content: 'Please check with your credentials');
-      }
+      Navigator.pushReplacementNamed(context, LocationScreen.screenId);
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
       if (e.code == 'user-not-found') {

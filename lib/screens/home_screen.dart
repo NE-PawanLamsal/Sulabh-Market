@@ -5,7 +5,6 @@ import 'package:sulabh_market_app/components/main_appbar_with_search.dart';
 import 'package:sulabh_market_app/components/product_listing_widget.dart';
 import 'package:sulabh_market_app/constants/colors.dart';
 import 'package:sulabh_market_app/constants/widgets.dart';
-import 'package:sulabh_market_app/provider/category_provider.dart';
 import 'package:sulabh_market_app/screens/location_screen.dart';
 import 'package:sulabh_market_app/utils.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -15,7 +14,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String screenId = 'home_screen';
@@ -29,8 +27,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late TextEditingController searchController;
-  late CarouselController _controller;
-  int _current = 0;
   late FocusNode searchNode;
 
   Future<List<String>> downloadBannerImageUrlList() async {
@@ -49,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     searchController = TextEditingController();
     searchNode = FocusNode();
-    _controller = CarouselController();
     super.initState();
   }
 
@@ -63,8 +58,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var categoryProvider = Provider.of<CategoryProvider>(context);
-
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80),

@@ -43,6 +43,7 @@ class _LoginInButtonsState extends State<LoginInButtons> {
         InkWell(
           onTap: () async {
             User? user = await Auth.signInWithGoogle(context: context);
+            if (!mounted) return;
             if (user != null) {
               authService.getAdminCredentialPhoneNumber(context, user);
             }

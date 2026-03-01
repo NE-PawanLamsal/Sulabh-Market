@@ -356,7 +356,6 @@ class _CommonFormState extends State<CommonForm> {
                         children: [
                           InkWell(
                             onTap: () {
-                              // ignore: void_checks
                               return commonBottomsheet(
                                   context, bedroomList, _bedroomController);
                             },
@@ -397,7 +396,6 @@ class _CommonFormState extends State<CommonForm> {
                           ),
                           InkWell(
                             onTap: () {
-                              // ignore: void_checks
                               return commonBottomsheet(
                                   context, bathroomList, _bathroomController);
                             },
