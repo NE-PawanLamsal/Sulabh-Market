@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "130061472873",
+    "project_id": "hamromarket-6889c",
+    "storage_bucket": "hamromarket-6889c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130061472873:android:156510b71988eb8a6b7ef8",
+        "android_client_info": {
+          "package_name": "com.example.sulabh_market_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130061472873-9qa761b447fm2gmj0rrugclaa5v9p1h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9iwzq4quXAB2KF7R0llLLMlYrly5u7qY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130061472873-9qa761b447fm2gmj0rrugclaa5v9p1h7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
